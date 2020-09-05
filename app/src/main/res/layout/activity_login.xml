@@ -21,7 +21,7 @@
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username" />
+        android:hint="Email" />
 
     <EditText
         android:layout_marginLeft="30dp"
@@ -42,6 +42,32 @@
         android:layout_height="wrap_content"
         android:text="LOGIN"
         android:textColor="#fff"/>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:textAlignment="center"
+            android:text="Already have an account? "
+            android:textColor="#b2b2b2"/>
+
+        <TextView
+            android:id="@+id/txtregis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:textAlignment="center"
+            android:text="REGISTER"
+            android:textColor="#77cdf0"/>
+    </LinearLayout>
+
 
 </RelativeLayout>
 
