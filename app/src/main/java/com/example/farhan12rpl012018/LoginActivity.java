@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txtRegis;
     private Button btnLogin;
     private EditText username, pass;
-    private String URL = "http://192.168.6.71/tugasapi/";
+    private Resources resources;
+    private String URL;
 
 
     @Override
@@ -41,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnlogin);
         username = findViewById(R.id.username);
         pass = findViewById(R.id.pass);
+        resources = getResources();
+        URL = resources.getString(R.string.main_url);
 
         txtRegis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                                         String NO_HP = payload.optString("NOMOR_HP");
                                         String NO_KTP = payload.optString("NOMOR_KTP");
                                         String ALAMAT = payload.optString("ALAMAT");
+                                        String ROLE = payload.optString("ROLE");
 
                                         preferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
                                         preferences.edit()
@@ -95,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                                                 .putString("email", EMAIL)
                                                 .putString("no_ktp", NO_KTP)
                                                 .putString("alamat", ALAMAT)
+                                                .putString("role", ROLE)
                                                 .apply();
 
                                         Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);

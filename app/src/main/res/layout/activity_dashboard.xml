@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#FFF">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -47,14 +52,16 @@
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
+        app:cardCornerRadius="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
 
         <LinearLayout
+            android:id="@+id/bgll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_button"
+            android:background="@drawable/light_bg"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -64,10 +71,10 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/txtcity"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Good Morning"
                     android:textColor="#ffff"
                     android:textSize="18dp" />
 
@@ -80,7 +87,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="28dp"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/cloud" />
+                        android:id="@+id/imgcloud"/>
 
                 </RelativeLayout>
 
@@ -101,9 +108,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:text="21 C"
                         android:textColor="#ffff"
-                        android:textSize="18dp" />
+                        android:textSize="18dp"
+                        android:id="@+id/txttemp"/>
 
                 </RelativeLayout>
 
@@ -113,148 +120,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="NO INTERNET"
                     android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sun"
-                        android:textColor="#ffff" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 C"
-                        android:textColor="#ffff"
-                        android:textSize="18dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mon"
-                        android:textColor="#ffff" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 C"
-                        android:textColor="#ffff"
-                        android:textSize="18dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tue"
-                        android:textColor="#ffff" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 C"
-                        android:textColor="#ffff"
-                        android:textSize="18dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Wed"
-                        android:textColor="#ffff" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 C"
-                        android:textColor="#ffff"
-                        android:textSize="18dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Thu"
-                        android:textColor="#ffff" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 C"
-                        android:textColor="#ffff"
-                        android:textSize="18dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fri"
-                        android:textColor="#ffff" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20 C"
-                        android:textColor="#ffff"
-                        android:textSize="18dp" />
-
-
-                </LinearLayout>
-
-
+                    android:visibility="gone"
+                    android:id="@+id/txtinetsign"/>
             </LinearLayout>
 
 
@@ -269,6 +142,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/btnbike"
             app:cardBackgroundColor="@color/cardBackground"
             android:layout_width="190dp"
             android:layout_height="160dp"
@@ -290,7 +164,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_tag_faces_black_24dp" />
+                    android:src="@drawable/ic_directions_bike_black_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -298,13 +172,15 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="16dp"
-                    android:text="User"
+                    android:text="Bike"
                     android:textColor="#5E5E5E"
                     android:textSize="18dp" />
+
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/btnstore"
             android:layout_width="190dp"
             app:cardBackgroundColor="@color/cardBackground"
             android:layout_height="160dp"
@@ -348,6 +224,8 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            android:id="@+id/btnlistuser"
             app:cardBackgroundColor="@color/cardBackground"
             android:layout_width="190dp"
             android:layout_height="160dp"
@@ -369,7 +247,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_directions_bike_black_24dp" />
+                    android:src="@drawable/ic_tag_faces_black_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -377,13 +255,15 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="16dp"
-                    android:text="Bike"
+                    android:text="User"
                     android:textColor="#5E5E5E"
                     android:textSize="18dp" />
+
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/btnlogout"
             app:cardBackgroundColor="@color/cardBackground"
             android:layout_width="190dp"
             android:layout_height="160dp"
@@ -405,7 +285,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_info_outline_black_24dp" />
+                    android:src="@drawable/ic_exit_to_app_black_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -413,11 +293,11 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="16dp"
-                    android:text="Information"
+                    android:text="Log Out"
                     android:textColor="#5E5E5E"
                     android:textSize="18dp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-
 </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

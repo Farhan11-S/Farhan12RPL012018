@@ -35,7 +35,7 @@
         android:id="@+id/btnlogin"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/login_button"
+        android:background="@drawable/dark_bg"
         android:layout_marginTop="20dp"
         android:layout_below="@id/pass"
         android:layout_width="match_parent"
