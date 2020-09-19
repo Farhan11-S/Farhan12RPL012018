@@ -1,11 +1,14 @@
 package com.example.farhan12rpl012018;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -32,11 +35,19 @@ public class ListCustomerActivity extends AppCompatActivity {
     private CustomersAdapter customersAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private SharedPreferences sharedPreferences;
+    private Toolbar toolbar;
+    private Resources resources;
+    private String URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_customer);
+
+        toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = findViewById(R.id.recyclercustomer);
         customersAdapter = new CustomersAdapter(getBaseContext(),models);
@@ -58,10 +69,18 @@ public class ListCustomerActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     private void getData(){
+        resources = getResources();
+        URL = resources.getString(R.string.main_url);
         sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
         final String id = sharedPreferences.getString("id", "");
-        AndroidNetworking.post("http://192.168.43.183/tugasapi/show_user.php")
+        AndroidNetworking.post(URL + "show_user.php")
                 .addBodyParameter("id", id)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -119,6 +138,8 @@ public class ListCustomerActivity extends AppCompatActivity {
     }
 
     public void editData(String id, String username, String nohp, String noktp,String alamat) {
+        resources = getResources();
+        URL = resources.getString(R.string.main_url);
         sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
         final String id_auth = sharedPreferences.getString("id", "");
         HashMap<String, String> body = new HashMap<>();
@@ -128,7 +149,7 @@ public class ListCustomerActivity extends AppCompatActivity {
         body.put("nama", username);
         body.put("nohp", nohp);
         body.put("alamat", alamat);
-        AndroidNetworking.post("http://192.168.43.183/tugasapi/edit_user.php")
+        AndroidNetworking.post(URL + "edit_user.php")
                 .addBodyParameter(body)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -159,12 +180,14 @@ public class ListCustomerActivity extends AppCompatActivity {
     }
 
     public void deleteData(String id) {
+        resources = getResources();
+        URL = resources.getString(R.string.main_url);
         sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
         final String id_auth = sharedPreferences.getString("id", "");
         HashMap<String, String> body = new HashMap<>();
         body.put("id_auth", id_auth);
         body.put("id", id);
-        AndroidNetworking.post("http://192.168.43.183/tugasapi/delete_user.php")
+        AndroidNetworking.post(URL + "delete_user.php")
                 .addBodyParameter(body)
                 .setPriority(Priority.MEDIUM)
                 .build()

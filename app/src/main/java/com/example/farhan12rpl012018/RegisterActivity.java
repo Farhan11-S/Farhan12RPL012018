@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,16 +25,16 @@ import java.util.HashMap;
 public class RegisterActivity extends AppCompatActivity {
     TextView readyaccount;
     private Button btnregister;
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String ID = "id";
-    public static final String USERNAME = "username";
-    private SharedPreferences preferences;
-    private String URL = "http://192.168.6.71/tugasapi/";
+    private Resources resources;
+    private String URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        resources = getResources();
+        URL = resources.getString(R.string.main_url);
 
         btnregister = findViewById(R.id.btnregis);
         final EditText txtemail = findViewById(R.id.txtemail);

@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ListCustomerActivity"></activity>
+        <activity android:name=".ShowBikeActivity"></activity>
+        <activity android:name=".StoreActivity" />
+        <activity android:name=".ListCustomerActivity" />
         <activity android:name=".Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

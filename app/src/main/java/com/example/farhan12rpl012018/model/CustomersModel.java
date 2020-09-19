@@ -3,10 +3,9 @@ package com.example.farhan12rpl012018.model;
 public class CustomersModel {
 
     private int profile;
-    private String name;
-    private String location;
-    private String email;
-    private String noktp;
+    private String name, noktp;
+    private String location, email;
+    private String nohp, id, role;
 
     public String getEmail() {
         return email;
@@ -47,10 +46,6 @@ public class CustomersModel {
     public void setId(String id) {
         this.id = id;
     }
-
-    private String nohp;
-    private String role;
-    private String id;
 
 
     public int getProfile() {
