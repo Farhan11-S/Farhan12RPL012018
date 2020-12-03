@@ -3,6 +3,8 @@
     package="com.example.farhan12rpl012018">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ShowBikeActivity"></activity>
+        <activity android:name=".CreateBikeActivity"></activity>
+        <activity android:name=".ShowBikeActivity" />
         <activity android:name=".StoreActivity" />
         <activity android:name=".ListCustomerActivity" />
         <activity android:name=".Splash_screen">

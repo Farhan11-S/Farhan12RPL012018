@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StoreActivity extends AppCompatActivity {
+
     private RecyclerView recyclerView;
     private List<StoreModel> models = new ArrayList<>();
     private StoreAdapter storeAdapter;
@@ -80,7 +81,7 @@ public class StoreActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StoreActivity.this, ShowBikeActivity.class);
+                Intent intent = new Intent(StoreActivity.this, CreateBikeActivity.class);
                 startActivity(intent);
             }
         });
